@@ -38,6 +38,7 @@ public class AddUrlCommand
                 {
                     e.printStackTrace();
                 }
+                //hi
                 return true;
             }
             player.sendMessage("Usage: \n /addurl <url>");
