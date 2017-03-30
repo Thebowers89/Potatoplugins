@@ -4,17 +4,15 @@ import PotatoBlocker.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainClass
-        extends JavaPlugin
-{
-    public void onEnable()
-    {
+        extends JavaPlugin {
+    public void onEnable() {
         registerCommands();
     }
 
-    public void onDisable() {}
+    public void onDisable() {
+    }
 
-    private void registerCommands()
-    {
+    private void registerCommands() {
         getCommand("vote").setExecutor(new VoteCommand());
         getCommand("addurl").setExecutor(new AddUrlCommand());
         getCommand("plugins").setExecutor(new Blockone());
