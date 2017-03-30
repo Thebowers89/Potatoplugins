@@ -8,3 +8,15 @@ commands:
     addurl:
         usage:
         description:
+    plugins:
+        usage:
+        description:
+    plugin:
+        usage:
+        description:
+    pl:
+        usage:
+        description:
+    ?:
+         usage:
+         description:
