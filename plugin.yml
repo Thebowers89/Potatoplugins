@@ -1,0 +1,10 @@
+name: PotatoPlugins
+main: PotatoPlugin.VotePlugin
+version: 1.0
+commands:
+    vote:
+        usage:
+        description:
+    addurl:
+        usage:
+        description:
