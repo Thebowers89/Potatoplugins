@@ -1,5 +1,6 @@
 package PotatoPlugin;
 
+import PotatoBlocker.Blockone;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainClass
@@ -16,5 +17,6 @@ public class MainClass
     {
         getCommand("vote").setExecutor(new VoteCommand());
         getCommand("addurl").setExecutor(new AddUrlCommand());
+        getCommand("plugins").setExecutor(new Blockone());
     }
 }
