@@ -9,8 +9,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.PluginManager;
 
 public class AddUrlCommand
         implements CommandExecutor
@@ -38,7 +36,6 @@ public class AddUrlCommand
                 {
                     e.printStackTrace();
                 }
-                //hi
                 return true;
             }
             player.sendMessage("Usage: \n /addurl <url>");

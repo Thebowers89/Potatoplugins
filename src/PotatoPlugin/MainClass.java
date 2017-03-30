@@ -1,9 +1,8 @@
 package PotatoPlugin;
 
-import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class VotePlugin
+public class MainClass
         extends JavaPlugin
 {
     public void onEnable()

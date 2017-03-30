@@ -1,5 +1,5 @@
 name: PotatoPlugins
-main: PotatoPlugin.VotePlugin
+main: PotatoPlugin.MainClass
 version: 1.0
 commands:
     vote:
