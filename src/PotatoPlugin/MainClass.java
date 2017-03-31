@@ -1,6 +1,7 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
+import PotatoSwear.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainClass extends JavaPlugin {
@@ -15,6 +16,7 @@ public class MainClass extends JavaPlugin {
     private void registerCommands() {
         registerBlocker();
         registerVote();
+        registerSwear();
     }
 
     private void registerVote() {
@@ -29,4 +31,8 @@ public class MainClass extends JavaPlugin {
         getCommand("?").setExecutor(new Blockfour());
     }
 
+    private void registerSwear() {
+        getCommand("swearfilter").setExecutor(new SwearFilterCommand);
+
+    }
 }
