@@ -2,15 +2,24 @@ package PotatoPlugin;
 
 import PotatoBlocker.*;
 import PotatoSwear.*;
+import PotatoSwear.Commands.SwearFilterCommand;
+import PotatoSwear.Handlers.FilterHandler;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainClass extends JavaPlugin {
     public void onEnable() {
         registerCommands();
+        registerEvents();
     }
 
     public void onDisable() {
 
+    }
+
+    private void registerEvents() {
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(new FilterHandler(), this);
     }
 
     private void registerCommands() {
@@ -32,7 +41,7 @@ public class MainClass extends JavaPlugin {
     }
 
     private void registerSwear() {
-        getCommand("swearfilter").setExecutor(new SwearFilterCommand);
+        getCommand("swearfilter").setExecutor(new SwearFilterCommand(this));
 
     }
 }
