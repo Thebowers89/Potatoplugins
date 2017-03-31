@@ -32,7 +32,6 @@ public class MainClass extends JavaPlugin {
     }
 
     private void registerSwear() {
-        getCommand("swearfilter").setExecutor(new SwearFilterCommand);
-
+        getCommand("swearfilter").setExecutor(new SwearFilterCommand(this));
     }
 }
