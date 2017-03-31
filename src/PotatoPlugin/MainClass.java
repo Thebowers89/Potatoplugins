@@ -1,7 +1,8 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
-import PotatoSwear.*;
+import PotatoSwear.Commands.SwearFilterCommand;
+import PotatoSwear.Handlers.FilterHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class MainClass extends JavaPlugin {
@@ -17,6 +18,7 @@ public class MainClass extends JavaPlugin {
         registerBlocker();
         registerVote();
         registerSwear();
+        registerEvents();
     }
 
     private void registerVote() {
@@ -31,8 +33,25 @@ public class MainClass extends JavaPlugin {
         getCommand("?").setExecutor(new Blockfour());
     }
 
-    private void registerSwear() {
-        getCommand("swearfilter").setExecutor(new SwearFilterCommand);
+    private void registerEvents()
+    {
+        pluginmanager pm = getServer().getPluginManager();
+        pm.registerEvents(new FilterHandler(), this);
+    }
 
+    private void registerSwear() {
+        getCommand("swearfilter").setExecutor(new SwearFilterCommand());
+
+        File file = new File(getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/SwearList.yml");
+        YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
+        if (myFile.contains("Swears")) {
+            List<String> thing = myFile.getStringList("Swears");
+            FilterHandler.swears = thing;
+            System.out.println("[Better Swear Filter] Swear List Loaded!");
+        } else {
+            ArrayList<String> thing = new ArrayList();
+            FilterHandler.swears = thing;
+            System.out.println("[Better Swear Filter] No Swear List Found!");
+        }
     }
 }

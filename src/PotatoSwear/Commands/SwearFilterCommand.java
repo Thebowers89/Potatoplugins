@@ -1,4 +1,4 @@
-package PotatoSwear;
+package PotatoSwear.Commands;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class SwearFilterCommand
                                 e.printStackTrace();
                             }
                             sender.sendMessage("Successfully added the bad word.");
-                            this.plugin.registerSwears();
+                            this.plugin.registerSwear();
                             return true;
                         }
                         ArrayList<String> things = new ArrayList();
@@ -69,7 +69,7 @@ public class SwearFilterCommand
                             e.printStackTrace();
                         }
                         sender.sendMessage("Successfully added the bad word.");
-                        this.plugin.registerSwears();
+                        this.plugin.registerSwear();
                         return true;
                     }
                     if (args[0].equalsIgnoreCase("del"))
@@ -90,7 +90,7 @@ public class SwearFilterCommand
                                 e.printStackTrace();
                             }
                             sender.sendMessage("Successfully removed the bad word.");
-                            this.plugin.registerSwears();
+                            this.plugin.registerSwear();
                             return true;
                         }
                         sender.sendMessage("The bad word is not in the filter.");
