@@ -25,7 +25,7 @@ public class SwearFilterCommand
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
     {
         if ((commandLabel.equalsIgnoreCase("sf")) || (commandLabel.equalsIgnoreCase("swearfilter"))) {
-            if (sender.hasPermission("ps.Modify"))
+            if (sender.hasPermission("ps.Modify") || sender.isOp())
             {
                 if (args.length == 2)
                 {

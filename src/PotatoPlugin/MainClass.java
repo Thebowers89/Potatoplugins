@@ -1,7 +1,6 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
-import PotatoSwear.*;
 import PotatoSwear.Commands.SwearFilterCommand;
 import PotatoSwear.Handlers.FilterHandler;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -13,9 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainClass extends JavaPlugin {
+
     public void onEnable() {
         registerCommands();
         registerEvents();
+        registerSwears();
     }
 
     public void onDisable() {
@@ -23,7 +24,7 @@ public class MainClass extends JavaPlugin {
     }
 
     public void registerSwears() {
-        File file = new File(getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/Swear List.yml");
+        File file = new File(getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/SwearList.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         if (myFile.contains("Swears"))
         {
