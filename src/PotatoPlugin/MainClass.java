@@ -3,6 +3,8 @@ package PotatoPlugin;
 import PotatoBlocker.*;
 import PotatoSwear.Commands.SwearFilterCommand;
 import PotatoSwear.Handlers.FilterHandler;
+import PotatoVote.AddUrlCommand;
+import PotatoVote.VoteCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -30,13 +32,13 @@ public class MainClass extends JavaPlugin {
         {
             List<String> thing = myFile.getStringList("Swears");
             FilterHandler.swears = thing;
-            System.out.println("[Better Swear Filter] Swear List Loaded!");
+            System.out.println("[PotatoSwear] Swear List Loaded!");
         }
         else
         {
             ArrayList<String> thing = new ArrayList();
             FilterHandler.swears = thing;
-            System.out.println("[Better Swear Filter] No Swear List Found!");
+            System.out.println("[PotatoSwear] No Swear List Found!");
         }
     }
 

@@ -1,4 +1,4 @@
-package PotatoPlugin;
+package PotatoVote;
 
 import java.io.File;
 import java.util.List;
