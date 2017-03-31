@@ -53,7 +53,7 @@ public class SwearFilterCommand
                                 e.printStackTrace();
                             }
                             sender.sendMessage("Successfully added the bad word.");
-                            this.plugin.registerSwear();
+                            this.plugin.registerSwears();
                             return true;
                         }
                         ArrayList<String> things = new ArrayList();
@@ -69,7 +69,7 @@ public class SwearFilterCommand
                             e.printStackTrace();
                         }
                         sender.sendMessage("Successfully added the bad word.");
-                        this.plugin.registerSwear();
+                        this.plugin.registerSwears();
                         return true;
                     }
                     if (args[0].equalsIgnoreCase("del"))
@@ -90,7 +90,7 @@ public class SwearFilterCommand
                                 e.printStackTrace();
                             }
                             sender.sendMessage("Successfully removed the bad word.");
-                            this.plugin.registerSwear();
+                            this.plugin.registerSwears();
                             return true;
                         }
                         sender.sendMessage("The bad word is not in the filter.");
