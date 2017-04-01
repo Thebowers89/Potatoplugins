@@ -2,6 +2,9 @@ package PotatoPlugin;
 
 import PotatoBlocker.*;
 import PotatoShop.Commands.*;
+import PotatoShop.Inventories.IconEditor;
+import PotatoShop.Inventories.PShopMenu;
+import PotatoShop.ShopListener;
 import PotatoSwear.Commands.SwearFilterCommand;
 import PotatoSwear.Handlers.FilterHandler;
 import PotatoVote.AddUrlCommand;
@@ -21,6 +24,7 @@ public class MainClass extends JavaPlugin {
         registerEvents();
         registerSwears();
         registerShop();
+        registerShopEvents();
     }
 
     public void onDisable() {
@@ -78,4 +82,12 @@ public class MainClass extends JavaPlugin {
         getCommand("bcshop").setExecutor(new BCShopCommand());
         getCommand("ps").setExecutor(new PSCommand());
     }
+
+    private void registerShopEvents() {
+        PluginManager pm = getServer().getPluginManager();
+        pm.registerEvents(new ShopListener(), this);
+        pm.registerEvents(new PShopMenu(), this);
+        pm.registerEvents(new IconEditor(), this);
+    }
+
 }
