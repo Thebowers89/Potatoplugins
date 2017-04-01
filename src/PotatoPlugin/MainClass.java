@@ -1,6 +1,7 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
+import PotatoShop.Commands.*;
 import PotatoSwear.Commands.SwearFilterCommand;
 import PotatoSwear.Handlers.FilterHandler;
 import PotatoVote.AddUrlCommand;
@@ -19,6 +20,7 @@ public class MainClass extends JavaPlugin {
         registerCommands();
         registerEvents();
         registerSwears();
+        registerShop();
     }
 
     public void onDisable() {
@@ -67,5 +69,13 @@ public class MainClass extends JavaPlugin {
 
     private void registerSwear() {
         getCommand("swearfilter").setExecutor(new SwearFilterCommand(this));
+    }
+
+    private void registerShop() {
+        getCommand("pshops").setExecutor(new PShopsCommand());
+        getCommand("pshopmenu").setExecutor(new PotatoShopMenuCommand());
+        getCommand("sshop").setExecutor(new SShopCommand());
+        getCommand("bcshop").setExecutor(new BCShopCommand());
+        getCommand("ps").setExecutor(new PSCommand());
     }
 }
