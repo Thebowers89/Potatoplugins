@@ -34,7 +34,7 @@ public class IconEditor
         inv.addItem(new ItemStack[] { new ItemStack(Material.REDSTONE) });
         inv.addItem(new ItemStack[] { new ItemStack(Material.SEEDS) });
         inv.addItem(new ItemStack[] { new ItemStack(Material.ENDER_PEARL) });
-        inv.addItem(new ItemStack[] { new ItemStack(Material.POTION, 1, 8261) });
+        inv.addItem(new ItemStack[] { new ItemStack(Material.POTION, 1, (byte) 8261) });
         inv.addItem(new ItemStack[] { new ItemStack(Material.IRON_SWORD) });
         inv.addItem(new ItemStack[] { new ItemStack(Material.IRON_CHESTPLATE) });
         return inv;
