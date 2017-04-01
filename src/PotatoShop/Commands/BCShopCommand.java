@@ -16,38 +16,30 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class BCShopCommand
-        implements CommandExecutor
-{
-    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args)
-    {
+        implements CommandExecutor {
+    public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if ((sender instanceof Player)) {
-            if ((sender.hasPermission("pshops.bcshop")) || (sender.isOp()))
-            {
-                if (args.length == 1)
-                {
+            if ((sender.hasPermission("pshops.bcshop")) || (sender.isOp())) {
+                if (args.length == 1) {
                     File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
                     YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
                     setLoc(args[0]);
                     return true;
                 }
-            }
-            else
-            {
+            } else {
                 sender.sendMessage("You do not have permission to execute this command!");
                 return true;
             }
         }
-        if (args.length == 1)
-        {
+        if (args.length == 1) {
             File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
             YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
             int counter = 0;
             for (String key : myFile.getConfigurationSection("Player Shop").getKeys(false)) {
                 counter += 1;
             }
-            if (counter < 14)
-            {
+            if (counter < 14) {
                 setLoc(args[0]);
                 return true;
             }
@@ -57,26 +49,21 @@ public class BCShopCommand
         return false;
     }
 
-    private void setLoc(String string)
-    {
+    private void setLoc(String string) {
         File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         Location spawn = LocUtils.getLocation("Pshop.Locations.Spawn");
         setPShopLocation(spawn, string);
         myFile.set("Player Shop." + string + ".Item", defaultItem(string));
-        try
-        {
+        try {
             myFile.save(file);
             System.out.println("Created " + string + "'s shop!");
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void setPShopLocation(Location loc, String string)
-    {
+    public static void setPShopLocation(Location loc, String string) {
         File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
@@ -86,19 +73,15 @@ public class BCShopCommand
         myFile.set("Player Shop." + string + ".Location.Z", Double.valueOf(loc.getZ()));
         myFile.set("Player Shop." + string + ".Location.Yaw", Float.valueOf(loc.getYaw()));
         myFile.set("Player Shop." + string + ".Location.Pitch", Float.valueOf(loc.getPitch()));
-        try
-        {
+        try {
             myFile.save(file);
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("ERROR CONFIGURING SHOP LOCATION, YOU DOOFUS!");
         }
     }
 
-    private ItemStack defaultItem(String string)
-    {
+    private ItemStack defaultItem(String string) {
         ItemStack pearl = new ItemStack(Material.ENDER_PEARL);
         ItemMeta pearlMeta = pearl.getItemMeta();
         pearlMeta.setDisplayName(string);

@@ -10,20 +10,20 @@ commands:
         description:
     plugins:
         usage:
-        description:
+        description: No lookie!
     plugin:
         usage:
-        description:
+        description: No lookie!
     pl:
         usage:
-        description:
+        description: No lookie!
     ?:
         usage:
-        description:
+        description: No lookie!
     swearfilter:
         aliases: sf
         usage:
-        description:
+        description: SwearFilter add/del
     pshops:
         usage: /pshops
         description: Teleports you to the player shop world.
@@ -36,10 +36,10 @@ commands:
         description: A command used to configuring sponsored shops.
     test:
         usage:
-        description:
+        description: nothing
     bcshop:
         usage:
-        description:
+        description: Create PSM shop.
     ps:
         usage:
-        description:
+        description: Change Lore/Icon.
