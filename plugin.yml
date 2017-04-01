@@ -18,9 +18,28 @@ commands:
         usage:
         description:
     ?:
-         usage:
-         description:
+        usage:
+        description:
     swearfilter:
-         aliases: sf
-         usage:
-         description:
+        aliases: sf
+        usage:
+        description:
+    pshops:
+        usage: /pshops
+        description: Teleports you to the player shop world.
+    pshopmenu:
+        aliases: psm
+        usage: /pshopmenu
+        description: Opens the Player Shop Menu.
+    sshop:
+        usage: /sshop
+        description: A command used to configuring sponsored shops.
+    test:
+        usage:
+        description:
+    bcshop:
+        usage:
+        description:
+    ps:
+        usage:
+        description:
