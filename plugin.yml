@@ -4,10 +4,10 @@ version: 1.0
 commands:
     vote:
         usage:
-        description:
+        description: Vote for the server
     addurl:
         usage:
-        description:
+        description: Add a url to /vote
     plugins:
         usage:
         description: No lookie!
