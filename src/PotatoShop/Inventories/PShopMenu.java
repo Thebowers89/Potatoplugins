@@ -78,17 +78,17 @@ public class PShopMenu
             else if (item.equals(ItemStacks.speed2()))
             {
                 player.removePotionEffect(speed);
-                player.addPotionEffect(new PotionEffect(speed, 10000000, 1), true);
+                player.addPotionEffect(new PotionEffect(speed, 10000000, 5), true);
             }
             else if (item.equals(ItemStacks.speed3()))
             {
                 player.removePotionEffect(speed);
-                player.addPotionEffect(new PotionEffect(speed, 10000000, 2), true);
+                player.addPotionEffect(new PotionEffect(speed, 10000000, 10), true);
             }
             else if (item.equals(ItemStacks.speed4()))
             {
                 player.removePotionEffect(speed);
-                player.addPotionEffect(new PotionEffect(speed, 10000000, 3), true);
+                player.addPotionEffect(new PotionEffect(speed, 10000000, 15), true);
             }
             else if (!item.equals(ItemStacks.nullShop()))
             {
