@@ -1,6 +1,7 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
+import PotatoBC.*;
 import PotatoShop.Commands.*;
 import PotatoShop.Inventories.IconEditor;
 import PotatoShop.Inventories.PShopMenu;
@@ -12,7 +13,6 @@ import PotatoVote.VoteCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +25,7 @@ public class MainClass extends JavaPlugin {
         registerSwears();
         registerShop();
         registerShopEvents();
+        registerBC();
     }
 
     public void onDisable() {
@@ -34,14 +35,11 @@ public class MainClass extends JavaPlugin {
     public void registerSwears() {
         File file = new File(getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/SwearList.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
-        if (myFile.contains("Swears"))
-        {
+        if (myFile.contains("Swears")) {
             List<String> thing = myFile.getStringList("Swears");
             FilterHandler.swears = thing;
             System.out.println("[PotatoSwear] Swear List Loaded!");
-        }
-        else
-        {
+        } else {
             ArrayList<String> thing = new ArrayList();
             FilterHandler.swears = thing;
             System.out.println("[PotatoSwear] No Swear List Found!");
@@ -88,6 +86,16 @@ public class MainClass extends JavaPlugin {
         pm.registerEvents(new ShopListener(), this);
         pm.registerEvents(new PShopMenu(), this);
         pm.registerEvents(new IconEditor(), this);
+    }
+
+    private void registerBC() {
+        getConfig().options().copyDefaults(true);
+        saveDefaultConfig();
+
+        this.header = getConfig().getString("Header");
+        this.footer = getConfig().getString("Footer");
+
+        this.autobc = new AutoBC(this).runTaskTimer(this, 20L, 20L);
     }
 
 }
