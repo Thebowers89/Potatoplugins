@@ -1,9 +1,8 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
-import PotatoBrodcast.BroadcastConfigCommand;
-import PotatoBrodcast.Broadcaster;
-import PotatoBrodcast.Utils;
+import PotatoBroadcast.BroadcastConfigCommand;
+import PotatoBroadcast.Broadcaster;
 import PotatoShop.Commands.*;
 import PotatoShop.Inventories.IconEditor;
 import PotatoShop.Inventories.PShopMenu;
@@ -92,7 +91,7 @@ public class MainClass extends JavaPlugin {
 
     private void registerBC() {
         getCommand("configbroadcast").setExecutor(new BroadcastConfigCommand());
-        new Broadcaster().runTaskTimer(this, 1, 20 * 60 * Utils.getInterval());
+        new Broadcaster().runTaskTimer(this, 1, 20 * 10 * 1); //Middle is seconds
     }
 
 }

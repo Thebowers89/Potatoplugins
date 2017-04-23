@@ -1,4 +1,4 @@
-package PotatoBrodcast;
+package PotatoBroadcast;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -50,7 +50,7 @@ public class BroadcastConfigCommand implements CommandExecutor {
             player.sendMessage(ChatColor.RED + "Insufficient Permissions!");
             return true;
         }
-        sender.sendMessage("This command may only be executed by a player!");
+        sender.sendMessage("This command may only be executed by a REAL player, not a noob!");
         return false;
     }
 }

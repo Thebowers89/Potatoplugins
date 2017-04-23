@@ -3,7 +3,6 @@ package PotatoVote;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

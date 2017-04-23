@@ -1,4 +1,4 @@
-package PotatoBrodcast;
+package PotatoBroadcast;
 
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;

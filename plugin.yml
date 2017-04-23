@@ -36,7 +36,7 @@ commands:
         description: A command used to configuring sponsored shops.
     test:
         usage:
-        description: nothing
+        description: Does absolutely nothing at all.
     bcshop:
         usage:
         description: Create PSM shop.
