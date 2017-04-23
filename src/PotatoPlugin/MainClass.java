@@ -1,7 +1,8 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
-import PotatoBC.*;
+import PotatoBrodcast.BroadcastConfigCommand;
+import PotatoBrodcast.Broadcaster;
 import PotatoShop.Commands.*;
 import PotatoShop.Inventories.IconEditor;
 import PotatoShop.Inventories.PShopMenu;
@@ -18,9 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainClass extends JavaPlugin {
-
-    public String header;
-    public String footer;
 
     public void onEnable() {
         registerCommands();
@@ -92,13 +90,8 @@ public class MainClass extends JavaPlugin {
     }
 
     private void registerBC() {
-        getConfig().options().copyDefaults(true);
-        saveDefaultConfig();
-
-        this.header = getConfig().getString("Header");
-        this.footer = getConfig().getString("Footer");
-
-        new AutoBC(this).runTaskTimer(this, 20L, 20L);
+        getCommand("configbroadcast").setExecutor(new BroadcastConfigCommand());
+        new Broadcaster().runTaskTimer(this, 1, 20 * 60 * 1);
     }
 
 }

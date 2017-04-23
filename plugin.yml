@@ -43,3 +43,6 @@ commands:
     ps:
         usage:
         description: Change Lore/Icon.
+    configbroadcast:
+        usage:
+        description:
