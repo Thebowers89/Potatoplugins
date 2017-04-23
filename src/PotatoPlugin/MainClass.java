@@ -19,6 +19,9 @@ import java.util.List;
 
 public class MainClass extends JavaPlugin {
 
+    public String header;
+    public String footer;
+
     public void onEnable() {
         registerCommands();
         registerEvents();
@@ -95,7 +98,7 @@ public class MainClass extends JavaPlugin {
         this.header = getConfig().getString("Header");
         this.footer = getConfig().getString("Footer");
 
-        this.autobc = new AutoBC(this).runTaskTimer(this, 20L, 20L);
+        new AutoBC(this).runTaskTimer(this, 20L, 20L);
     }
 
 }

@@ -6,8 +6,7 @@ import PotatoPlugin.MainClass;
 import org.bukkit.Bukkit;
 import org.bukkit.scheduler.BukkitRunnable;
 
-public class AutoBC
-        extends BukkitRunnable {
+public class AutoBC extends BukkitRunnable {
     private final MainClass main;
     private final List<String> messages;
     private final int interval;
