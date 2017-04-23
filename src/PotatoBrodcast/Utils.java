@@ -52,4 +52,20 @@ public class Utils {
         }
     }
 
+    public static void setInterval(int number) {
+        myFile.set("Part.Interval", number);
+        try {
+            myFile.save(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static int getInterval() {
+        if (myFile.get("Part.Interval").equals(null)) {
+            return 10;
+        }
+        return myFile.getInt("Part.Interval");
+    }
+
 }

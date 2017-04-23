@@ -38,6 +38,10 @@ public class BroadcastConfigCommand implements CommandExecutor {
                         Utils.setMessage(message);
                         player.sendMessage(ChatColor.GREEN + "Message Set!");
                         return true;
+                    } else if (input.equalsIgnoreCase("interval")) {
+                        Utils.setInterval(Integer.parseInt(args[1]));
+                        player.sendMessage(ChatColor.GREEN + "Interval set!");
+                        return true;
                     }
                 }
                 player.sendMessage(ChatColor.RED + "Invalid arguments!");
