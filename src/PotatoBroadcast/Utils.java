@@ -76,11 +76,18 @@ public class Utils {
     }
 
     public static void init() {
-        if (Utils.getInterval() == 0) {
-            broadcaster = new Broadcaster().runTaskTimer(plugin, 1, 20 * 10); //Middle is seconds
-        } else {
-            broadcaster = new Broadcaster().runTaskTimer(plugin, 1, 20 * Utils.getInterval()); //Middle is seconds
+        if (!file.exists()) {
+            myFile.set("Part.Header", "Default header");
+            myFile.set("Part.Message", "Default message");
+            myFile.set("Part.Footer", "Default footer");
+            myFile.set("Part.Interval", 10);
+            try {
+                myFile.save(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        broadcaster = new Broadcaster().runTaskTimer(plugin, 1, 20 * Utils.getInterval()); //Middle is seconds
     }
 
     private static void update() {
