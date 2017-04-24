@@ -61,9 +61,6 @@ public class Utils {
     }
 
     public static int getInterval() {
-        if (myFile.get("Part.Interval").equals(null)) {
-            return 10;
-        }
         return myFile.getInt("Part.Interval");
     }
 
