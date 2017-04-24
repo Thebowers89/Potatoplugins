@@ -58,7 +58,7 @@ public class PShopMenu
     @EventHandler
     public void invInteract(InventoryClickEvent e)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         Inventory inv = e.getClickedInventory();
         Player player = (Player)e.getWhoClicked();

@@ -21,7 +21,7 @@ public class BCShopCommand
         if ((sender instanceof Player)) {
             if ((sender.hasPermission("pshops.bcshop")) || (sender.isOp())) {
                 if (args.length == 1) {
-                    File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+                    File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
                     YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
                     setLoc(args[0]);
@@ -33,7 +33,7 @@ public class BCShopCommand
             }
         }
         if (args.length == 1) {
-            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
             YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
             int counter = 0;
             for (String key : myFile.getConfigurationSection("Player Shop").getKeys(false)) {
@@ -50,7 +50,7 @@ public class BCShopCommand
     }
 
     private void setLoc(String string) {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         Location spawn = LocUtils.getLocation("Pshop.Locations.Spawn");
         setPShopLocation(spawn, string);
@@ -64,7 +64,7 @@ public class BCShopCommand
     }
 
     public static void setPShopLocation(Location loc, String string) {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
         myFile.set("Player Shop." + string + ".Location.World", loc.getWorld().getName());

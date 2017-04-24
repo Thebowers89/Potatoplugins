@@ -16,7 +16,7 @@ public class AddUrlCommand
         if (((sender instanceof Player)) && (
                 (commandLabel.equalsIgnoreCase("addurl")) || (sender.isOp()))) {
             Player player = (Player) sender;
-            File file = new File(Bukkit.getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/URLConfig.yml");
+            File file = new File(Bukkit.getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/Vote/URLConfig.yml");
             YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
             List<String> list = myFile.getStringList("Link List");
             if (args.length == 1) {

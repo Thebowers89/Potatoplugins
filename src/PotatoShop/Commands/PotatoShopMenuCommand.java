@@ -17,7 +17,7 @@ public class PotatoShopMenuCommand
     {
         if ((sender instanceof Player))
         {
-            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopConfig.yml");
+            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopConfig.yml");
             YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
             Player player = (Player)sender;

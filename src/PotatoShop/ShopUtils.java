@@ -11,7 +11,7 @@ public class ShopUtils
 {
     public static void sponShops(Inventory inv)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         if (myFile.contains("Player Shop"))
         {

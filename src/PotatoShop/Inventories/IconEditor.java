@@ -63,7 +63,7 @@ public class IconEditor
         if ((inv != null) &&
                 (inv.getName().equalsIgnoreCase(invName)))
         {
-            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
             YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
             if (item != null)
             {
@@ -78,7 +78,7 @@ public class IconEditor
 
     private static ItemStack buildItem(ItemStack oldItem, ItemStack newItem)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         ItemMeta oldMeta = oldItem.getItemMeta();
         newItem.setItemMeta(oldMeta);

@@ -27,7 +27,7 @@ public class SShopCommand
             {
                 if (args.length == 1)
                 {
-                    File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+                    File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
                     YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
                     String name = args[0];
 
@@ -46,7 +46,7 @@ public class SShopCommand
                 }
                 if (args.length == 3)
                 {
-                    File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+                    File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
                     YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
                     if (args[0].equalsIgnoreCase("edit"))
                     {
@@ -89,7 +89,7 @@ public class SShopCommand
                 {
                     if (args[0].equalsIgnoreCase("edit"))
                     {
-                        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+                        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
                         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
                         if (myFile.contains("Player Shop." + args[1]))
                         {

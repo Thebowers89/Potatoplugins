@@ -18,7 +18,7 @@ public class PSCommand
         implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if ((sender instanceof Player)) {
-            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+            File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
             YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
             Player player = (Player) sender;
             if (myFile.contains("Player Shop." + player.getName())) {

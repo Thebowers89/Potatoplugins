@@ -30,7 +30,7 @@ public class TestingInventory
 
     private static void fillTest(Inventory inv)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         System.out.println("Test2");
         if (myFile.contains("Player Shop")) {
@@ -44,7 +44,7 @@ public class TestingInventory
 
     private static void fillTest2(Inventory inv)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         if (myFile.contains("Player Shop"))
         {

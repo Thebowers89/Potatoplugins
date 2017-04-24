@@ -13,7 +13,7 @@ public class LocUtils
 {
     public static Location getLocation(String string)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopConfig.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopConfig.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
         World world = Bukkit.getServer().getWorld(myFile.getString(string + ".World"));
@@ -29,7 +29,7 @@ public class LocUtils
 
     public static void setDefaultLocation(Location loc, Player player)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopConfig.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopConfig.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
         myFile.set("Pshop.Locations.Spawn.World", loc.getWorld().getName());
@@ -52,7 +52,7 @@ public class LocUtils
 
     public static Location getPShopLocation(String string)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
         World world = Bukkit.getServer().getWorld(myFile.getString("Player Shop." + string + ".Location.World"));
@@ -68,7 +68,7 @@ public class LocUtils
 
     public static void setPShopLocation(Location loc, String string, Player player)
     {
-        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShopData.yml");
+        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/PlayerShops/PlayerShopData.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
 
         myFile.set("Player Shop." + string + ".Location.World", loc.getWorld().getName());

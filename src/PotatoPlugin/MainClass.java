@@ -1,17 +1,13 @@
 package PotatoPlugin;
 
 import PotatoBlocker.*;
-import PotatoBroadcast.BroadcastConfigCommand;
-import PotatoBroadcast.Broadcaster;
-import PotatoBroadcast.Utils;
+import PotatoVote.*;
+import PotatoBroadcast.*;
+import PotatoShop.*;
 import PotatoShop.Commands.*;
-import PotatoShop.Inventories.IconEditor;
-import PotatoShop.Inventories.PShopMenu;
-import PotatoShop.ShopListener;
+import PotatoShop.Inventories.*;
 import PotatoSwear.Commands.SwearFilterCommand;
 import PotatoSwear.Handlers.FilterHandler;
-import PotatoVote.AddUrlCommand;
-import PotatoVote.VoteCommand;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -35,7 +31,7 @@ public class MainClass extends JavaPlugin {
     }
 
     public void registerSwears() {
-        File file = new File(getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/SwearList.yml");
+        File file = new File(getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/Swears/SwearList.yml");
         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
         if (myFile.contains("Swears")) {
             List<String> thing = myFile.getStringList("Swears");

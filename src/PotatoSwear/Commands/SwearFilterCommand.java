@@ -31,7 +31,7 @@ public class SwearFilterCommand
                 {
                     if (args[0].equalsIgnoreCase("add"))
                     {
-                        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/SwearList.yml");
+                        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/Swears/SwearList.yml");
                         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
                         if (myFile.contains("Swears"))
                         {
@@ -74,7 +74,7 @@ public class SwearFilterCommand
                     }
                     if (args[0].equalsIgnoreCase("del"))
                     {
-                        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/SwearList.yml");
+                        File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/Swears/SwearList.yml");
                         YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
                         List<String> things = myFile.getStringList("Swears");
                         if (things.contains(args[1]))
