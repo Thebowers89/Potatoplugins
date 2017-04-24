@@ -91,12 +91,9 @@ public class MainClass extends JavaPlugin {
     }
 
     private void registerBC() {
+        new Utils(this);
         getCommand("configbroadcast").setExecutor(new BroadcastConfigCommand());
-        if (Utils.getInterval() == 0) {
-            new Broadcaster().runTaskTimer(this, 1, 20 * 10); //Middle is seconds
-        } else {
-            new Broadcaster().runTaskTimer(this, 1, 20 * Utils.getInterval()); //Middle is seconds
-        }
+        Utils.init();
     }
 
 }

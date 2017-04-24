@@ -1,12 +1,22 @@
 package PotatoBroadcast;
 
+import PotatoPlugin.MainClass;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.scheduler.BukkitTask;
+
 import java.io.File;
 import java.io.IOException;
 
 public class Utils {
+
+    private static MainClass plugin;
+    public Utils(MainClass instance) {
+        plugin = instance;
+    }
+
+    private static BukkitTask broadcaster;
 
     private static File file = new File(Bukkit.getServer().getPluginManager().getPlugin("PotatoPlugins").getDataFolder() + "/Broadcaster/Config.yml");
     private static YamlConfiguration myFile = YamlConfiguration.loadConfiguration(file);
@@ -58,10 +68,24 @@ public class Utils {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        update();
     }
 
     public static int getInterval() {
         return myFile.getInt("Part.Interval");
+    }
+
+    public static void init() {
+        if (Utils.getInterval() == 0) {
+            broadcaster = new Broadcaster().runTaskTimer(plugin, 1, 20 * 10); //Middle is seconds
+        } else {
+            broadcaster = new Broadcaster().runTaskTimer(plugin, 1, 20 * Utils.getInterval()); //Middle is seconds
+        }
+    }
+
+    private static void update() {
+        broadcaster.cancel();
+        init();
     }
 
 }
